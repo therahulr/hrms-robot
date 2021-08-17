@@ -4,11 +4,11 @@ Library  OperatingSystem
 Variables  ../../resources/test_data/fake_data/faker_data.py
 
 *** Variables ***
-#${default_path}=  ${CURDIR}${/}..${/}..${/}results${/}exported_test_data${/}${defult_test_data_file}
+${default_path}=  ${CURDIR}${/}..${/}..${/}results${/}exported_test_data${/}${defult_test_data_file}
 
 *** Keywords ***
 Export Test Data In Text File
-    [Arguments]  ${path}=${CURDIR}${/}..${/}..${/}results${/}exported_test_data${/}${defult_test_data_file}
+    [Arguments]  ${path}=${default_path}
     create file  ${path}  ***TEST DATA***${\n}
     file should exist  ${path}
 

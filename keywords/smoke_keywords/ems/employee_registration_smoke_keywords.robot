@@ -3,7 +3,7 @@ Library  SeleniumLibrary  timeout=20s
 Library  DebugLibrary
 
 Variables    ../../../pages/ems/employee_registration_locators.py
-Variables    ../../../resources/test_data/fake_data/faker_data.py
+Variables    ../../../resources/test_data/python_data/data.py
 Resource    ../../../keywords/common/common_keywords.robot
 Resource    ../../app_navigation/app_navigation_keywords.robot
 
