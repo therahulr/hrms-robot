@@ -1,11 +1,18 @@
 *** Settings ***
 Library    SeleniumLibrary    timeout=20s
 Library    DebugLibrary
-Variables    ../../pages/offerdesk/offer_desk_navigation_locators.py
-Variables    ../../pages/navigation/ems_navigation_locators.py
+Variables    ../../pages/navigation/app_navigation_locators.py
+
 
 *** Keywords ***
-#------------------------OFFER LETTER NAVIGATION------------------------#
+#------------------------HOME PAGE NAVIGATION------------------------
+Navigate To The Home Page
+    [Documentation]  Navigating to the Dashboard by click on Logo
+    wait until element is visible  ${index_logo}
+    click element  ${index_logo}
+    wait until element is visible  ${dashboard_header}
+
+#------------------------OFFER LETTER NAVIGATION------------------------
 
 Navigate To Offer Desk Screen
 
@@ -26,4 +33,12 @@ Navigate To Employee Registration Wizard
     wait until element is visible  ${employee_registration_btn}
     click element  ${employee_registration_btn}
     wait until element is visible  ${wizard_header}
+
+Navigate To Employee Approval Screen
+    [Documentation]  Navigate to the employee approval wizard
+    wait until element is visible  ${menu_icon}
+    click element  ${menu_icon}
+    wait until element is visible  ${employee_approval_option}
+    click element  ${employee_approval_option}
+    wait until element is visible  ${employee_approval_screen_header}
 

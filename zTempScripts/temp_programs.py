@@ -11,5 +11,3 @@ basefile = os.path.basename(__file__).split('.')[0]
 
 
 s = os.path.join(os.getcwd(),abs_file_path)
-
-print(s)

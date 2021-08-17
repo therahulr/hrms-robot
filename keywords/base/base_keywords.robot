@@ -6,13 +6,15 @@ Variables  ../../pages/login_page.py
 Variables  ../../resources/environment_data/login_credentials_data.py
 Variables  ../../pages/dashboard_page.py
 Variables  ../../resources/environment_data/env_data.py
+Resource  ../common/common_keywords.robot
 
 *** Keywords ***
 
 SetUp
   [Documentation]  Open url in ${browser} browser
-  open browser  ${base_url}  ${browser}
+  open browser  ${url}  ${browser}
   maximize browser window
+
 
 TearDown
     [Documentation]  Quitting browser
@@ -32,7 +34,7 @@ Login as an Employee
     input text  ${username_field}  ${employee_username}
     input text  ${password_field}  ${employee_pass}
     click button  ${signin_btn}
-    wait until element is visible  ${dashboard_logo}
+#    wait until element is visible  ${dashboard_logo}
 
 Login as a Manager
     [Documentation]  Login as a Manager

@@ -124,3 +124,11 @@ profileSaveBtn = "//div[@class='col-lg-9']//button[@class='btn btn-success'][nor
 profileSubmitBtn = "//div[@class='col-lg-9']//button[@class='btn btn-success'][normalize-space()='Submit']"
 profileCancelBtn = "//div[@class='col-lg-9']//button[@class='btn btn-warning'][normalize-space()='Cancel']"
 toastMsg = ".toast-message"
+
+# -----------------------EMS Approval------------------------
+approval_search_field = "//input[@id='created-employee-Approval-Search']"
+employee_approval_confirmation_header = "//h5[normalize-space()='Employee Approve']"
+remark_field = "//textarea[@name='remark']"
+send_btn = "//button[normalize-space()='Send']"
+close_btn = "//form[@id='approvalStatusForm']//button[@type='button'][normalize-space()='Close']"
+
