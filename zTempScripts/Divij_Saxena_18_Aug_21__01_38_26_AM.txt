@@ -1,2 +1,0 @@
-This file contains test data used in Offer Letter
-First Name: DivijLast Name: DivijMiddle Name: Divij

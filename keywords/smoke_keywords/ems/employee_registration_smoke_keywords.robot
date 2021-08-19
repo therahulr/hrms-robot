@@ -8,14 +8,13 @@ Resource    ../../../keywords/common/common_keywords.robot
 Resource    ../../app_navigation/app_navigation_keywords.robot
 
 *** Variables ***
-#${path}=  ${CURDIR}${/}..${/}..${/}..${/}results${/}smoke_testing${/}ems${/}${ems_creation_data_file}
-${path}=  ${ems_test_data_export_dir}/${ems_exported_data}
+${file_path}=  ${ems_td_data_path}${/}${ems_td_file_name}
 
 *** Keywords ***
 Fill Personal Information Details
     [Documentation]  Filling Personal Information Details
-    Export Test Data In Text File  ${path}
-    append to file  ${path}  *********************** PERSONAL INFORMATION ***********************${\n}
+    Export Test Data In Text File  ${file_path}
+    append to file  ${file_path}  *********************** PERSONAL INFORMATION ***********************${\n}
     Fill Data In Input Field  ${firstNameField}  ${first_name}  First Name
     Fill Data In Input Field  ${middleNameField}  ${middle_name}  Middle Name
     Fill Data In Input Field  ${lastNameField}  ${last_name}  Last Name
@@ -32,7 +31,7 @@ Fill Personal Information Details
 
 Fill Address Details
     [Documentation]  Filling Address Details
-    append to file  ${path}  ${\n}*********************** ADDRESS DETAILS ***********************${\n}
+    append to file  ${file_path}  ${\n}*********************** ADDRESS DETAILS ***********************${\n}
     wait until element is visible  ${addressInfoTab}
     click element  ${addressInfoTab}
     Fill Data In Input Field  ${address1field}  ${address_one}  Address Line 1
@@ -66,7 +65,7 @@ Fill Professional Experience
 
 Fill Experience Details
     [Documentation]  Filling Experience Details
-    append to file  ${path}  ${\n}*********************** EXPERIENCE DETAILS ***********************${\n}
+    append to file  ${file_path}  ${\n}*********************** EXPERIENCE DETAILS ***********************${\n}
     wait until element is visible  ${experienceDetailTab}
     click element  ${experienceDetailTab}
     Fill Academic Qualification
@@ -77,7 +76,7 @@ Fill Experience Details
 
 Fill Nominee Details
     [Documentation]  Filling Nominee Details
-    append to file  ${path}  ${\n}--------------- NOMINEE DETAILS ---------------${\n}
+    append to file  ${file_path}  ${\n}--------------- NOMINEE DETAILS ---------------${\n}
     Click On Element  ${addNomineeBtn}
     Fill Data In Input Field  ${nomineeNameField}  ${nominee_name}  Nominee Name
     Fill Data In Input Field  ${nomeineeAddressField}  ${nominee_addr}  Nominee Address
@@ -88,7 +87,7 @@ Fill Nominee Details
 
 Fill PF Details
     [Documentation]  Filling PF Details
-    append to file  ${path}  ${\n}*********************** PF DETAILS ***********************${\n}
+    append to file  ${file_path}  ${\n}*********************** PF DETAILS ***********************${\n}
     Click On Element  ${pfDetailsTab}
     Fill Data In Input Field  ${nameField}  ${first_name} ${last_name}  Full Name
     Fill Data In Input Field  ${accountNumField}  ${account_no}  Account No
@@ -112,7 +111,7 @@ Select Reporting Manager
 
 Fill Documents Details
     [Documentation]  Fill Document details
-    append to file  ${path}  ${\n}*********************** DOCUMENT DETAILS ***********************${\n}
+    append to file  ${file_path}  ${\n}*********************** DOCUMENT DETAILS ***********************${\n}
     Click On Element  ${docDetailsTab}
     Click On Element  ${addDocBtn}
     Select Random Option From Dropdown  ${docTypeDropdown}  Document Type
@@ -125,7 +124,7 @@ Fill Documents Details
 
 Fill Profile Tab
     [Documentation]  Filling Profile Details
-    append to file  ${path}  ${\n}*********************** PROFILE INFORMATION ***********************${\n}
+    append to file  ${file_path}  ${\n}*********************** PROFILE INFORMATION ***********************${\n}
     Click On Element  ${profileTab}
     Fill Data In Input Field  ${empIdField}  ${emp_id}  Employee ID
     Fill Data In Input Field  ${officialEmailField}  therahul@gmail.com  Official Email

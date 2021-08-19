@@ -19,6 +19,8 @@ Resource    ../keywords/common/common_keywords.robot
 #${f}=  ${{random.randint(0, 100)}}
 #${loc}=  FirstLoc
 
+${path}=  ${CURDIR}${/}..${/}
+
 
 
 *** Test Cases ***
@@ -47,7 +49,7 @@ Mark Attendance As Candidate
 
 
 Print Path Variables
-    log  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
+#    log  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
 #    create file  ${result}/${ems_creation_data_file}
 #    append to file  ${result}  This is Rahul Raj
-
+    log  ${path}

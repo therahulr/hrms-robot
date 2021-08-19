@@ -14,7 +14,7 @@ pdf = FPDF()
 
 """ Path for documents data and others """
 
-data_folder = Path("../documents/")
+data_folder = os.path.abspath("../documents")
 
 """ Functions Definition"""
 
@@ -29,7 +29,7 @@ def generate_sample_pdf_file():
     for i in range(4, random.randint(8, 15)):
         txt = fake.paragraph(nb_sentences=30)
         file_name = fake.first_name().lower() + ".pdf"
-        final_file = filepath / file_name
+        final_file = filepath + "/" + file_name
 
         pdf.add_page()
         pdf.set_font("Arial", size=15)
@@ -55,9 +55,9 @@ def get_pdf_document():
     else:
         if len(os.listdir(data_folder)) == 0:
             generate_sample_pdf_file()
-            file_to_open = data_folder / random.choice(os.listdir(data_folder))
+            file_to_open = data_folder + "/" + random.choice(os.listdir(data_folder))
         else:
-            file_to_open = data_folder / random.choice(os.listdir(data_folder))
+            file_to_open = data_folder + "/" + random.choice(os.listdir(data_folder))
     return file_to_open
 
 
@@ -79,7 +79,7 @@ emailid = first_name.lower() + last_name[:2].lower() + "@beyondhr.cloud"
 mobile_no = fake.numerify(text='98########')  # generates 10 digit mobile number (starts with 98)
 dob = fake.date_between(start_date='-60y', end_date='-20y').strftime("%d/%m/%Y")
 address = "This is a static address"  # will change to faker data when UI bug in address field will be resolved
-postal_code = fake.numerify(text='######')
+postal_code = str(random.randint(4, 9)) + fake.numerify(text='#####')
 pan_number = random_string(4) + last_name[:1] + fake.numerify(text='####') + random_string(1)
 aadhar_no = fake.numerify(text='9#####') + fake.numerify(text='######')
 
@@ -137,17 +137,17 @@ emp_id = random.randint(1, 10)
 official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
 
 """Exported text test data directory and filename"""
-offer_desk_test_data_export_dir = Path("../../../results/exported_test_data/offer_desk")
-create_offer_exported_data = "Create_Offer_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+default_td_data_path = Path("results/exported_test_data")
+default_td_file_name = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
     "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
-ems_test_data_export_dir = Path("../../../results/exported_test_data/ems")
-ems_exported_data = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
-                "%d_%b_%y__%I_%M_%S_%p") + ".txt"
+od_td_data_path = Path("results/exported_test_data/offer_desk/")
+od_td_file_name = "Create_Offer_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+    "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
-default_exported_data = Path("../../../results/exported_test_data") / (
-            first_name + "_" + last_name + "_" + datetime.now().strftime(
-                "%d_%b_%y__%I_%M_%S_%p") + ".txt")
+ems_td_data_path = Path("results/exported_test_data/ems/")
+ems_td_file_name = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+    "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
 """Test Programs (This section can be removed. It is only for testing some scripts"""
-print(ems_test_data_export_dir/ems_exported_data)
+print(data_folder)

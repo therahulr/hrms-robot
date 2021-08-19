@@ -7,7 +7,7 @@ Variables    ../../../resources/test_data/python_data/data.py
 Resource    ../../../keywords/common/common_keywords.robot
 
 *** Variables ***
-${path}=  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
+${file_path}=  ${od_td_data_path}${/}${od_td_file_name}
 
 *** Keywords ***
 
@@ -21,24 +21,10 @@ Go to Salary Structure Form
     wait until element is enabled  ${salaryStructureBtn}
     click element  ${salaryStructureBtn}
 
-Fill Data In Offer Letter Salary Form
-    [Documentation]  Selecting random option from the dynamic dropdown -- evaluated some python scripts here
-    append to file  ${path}  \n*********************** Offer Letter - Salary Structure ***********************${\n}
-    Scroll If Elemenet Is Not Visible  ${ctcField}
-    wait until element is enabled  ${ctcField}
-    Fill Data In Input Field  ${ctcField}  ${salary_ctc}  CTC(In Salary Modal)
-    mouse out  ${ctcField}
-    press keys  ${ctcField}  ENTER
-    sleep  2s
-    scroll element into view  ${saveSalaryBtn}
-    wait until element is visible  ${saveSalaryBtn}
-    wait until element is enabled  ${saveSalaryBtn}
-    click button  ${saveSalaryBtn}
-
 Fill Data In Create Offer Form
     [Documentation]  Clicking on create offer button
-    Export Test Data In Text File  ${path}
-    append to file  ${path}  *********************** Create Offer Form ***********************${\n}
+    create file  ${file_path}
+    append to file  ${file_path}  *********************** Create Offer Form ***********************${\n}
     Fill Data In Input Field  ${firstnamefield}  ${first_name}  First Name
     Fill Data In Input Field  ${middleNameField}  ${middle_name}  Middle Name
     Fill Data In Input Field  ${lastnamefield}  ${last_name}  Last Name
@@ -64,6 +50,20 @@ Fill Data In Create Offer Form
     scroll element into view  ${expYearField}
     Fill Data In Input Field  ${expYearField}  ${work_exp_year}  Experience(In Year)
     Fill Data In Input Field  ${expMonthField}  ${work_exp_month}  Experience(In Month)
+
+Fill Data In Offer Letter Salary Form
+    [Documentation]  Selecting random option from the dynamic dropdown -- evaluated some python scripts here
+    append to file  ${file_path}  \n*********************** Offer Letter - Salary Structure ***********************${\n}
+    Scroll If Elemenet Is Not Visible  ${ctcField}
+    wait until element is enabled  ${ctcField}
+    Fill Data In Input Field  ${ctcField}  ${salary_ctc}  CTC(In Salary Modal)
+    mouse out  ${ctcField}
+    press keys  ${ctcField}  ENTER
+    sleep  2s
+    scroll element into view  ${saveSalaryBtn}
+    wait until element is visible  ${saveSalaryBtn}
+    wait until element is enabled  ${saveSalaryBtn}
+    click button  ${saveSalaryBtn}
 
 Save Offer Letter
     Scroll If Elemenet Is Not Visible  ${saveOfferBtn}

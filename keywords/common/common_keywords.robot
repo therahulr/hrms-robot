@@ -4,13 +4,14 @@ Library  OperatingSystem
 Variables  ../../resources/test_data/python_data/data.py
 
 *** Variables ***
-${default_path}=  ${default_exported_data}
+
+#${default_file_path}=  ${default_td_file}
 
 *** Keywords ***
 Export Test Data In Text File
-    [Arguments]  ${path}=${default_path}
-    create file  ${path}  ***TEST DATA***${\n}
-    file should exist  ${path}
+    [Arguments]  ${td_file}
+    create file  ${td_file}  ***TEST DATA***${\n}
+    file should exist  ${td_file}
 
 
 Scroll If Elemenet Is Not Visible
@@ -27,7 +28,7 @@ Fill Data In Input Field
     wait until element is visible  ${locator}
     wait until element is enabled  ${locator}
     input text  ${locator}  ${value}
-    append to file  ${path}  ${field_name} : ${value}\n
+    append to file  ${file_path}  ${field_name} : ${value}\n
 
 Fill Data In Password Field
     [Arguments]   ${locator}  ${value}
@@ -61,7 +62,7 @@ Select A Value From Dropdown
     Scroll If Elemenet Is Not Visible  ${locator}
     wait until element is enabled  ${locator}
     select from list by label  ${locator}  ${label}
-    append to file  ${path}  ${field_name}: Selected option - ${label}\n
+    append to file  ${file_path}  ${field_name}: Selected option - ${label}\n
 
 Select Random Option From Dropdown
     [Arguments]   ${locator}  ${field_name}=${locator}
@@ -75,7 +76,7 @@ Select Random Option From Dropdown
     ${random_option}=  evaluate  random.choice(${option_exclude_select})
     log  ${random_option}
     select from list by label  ${locator}  ${random_option}
-    append to file  ${path}  ${field_name} : Selected Random option - ${random_option}\n
+    append to file  ${file_path}  ${field_name} : Selected Random option - ${random_option}\n
 
 Click On Save Button
     [Arguments]   ${saveBtn}
@@ -100,7 +101,7 @@ Verify Toaster Message
     log  ${toaster_msg}
     capture page screenshot
     wait until element is not visible  css:.toast-message
-    append to file  ${path}  \nToaster Message - ${toaster_msg}
+    append to file  ${file_path}  \nToaster Message - ${toaster_msg}
 
 Click On Element
     [Arguments]   ${locator}
@@ -114,7 +115,7 @@ Search By ID/Name
     wait until element is visible  ${locator}
     wait until element is enabled  ${locator}
     input text  ${locator}  ${value}
-    append to file  ${path}  ${field_name} : Search Employee By ID/Name - ${value}\n
+    append to file  ${file_path}  ${field_name} : Search Employee By ID/Name - ${value}\n
 
 
 
