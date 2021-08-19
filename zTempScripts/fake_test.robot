@@ -49,7 +49,4 @@ Mark Attendance As Candidate
 
 
 Print Path Variables
-#    log  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
-#    create file  ${result}/${ems_creation_data_file}
-#    append to file  ${result}  This is Rahul Raj
-    log  ${path}
+  log  ${mobile_no}[-4:]

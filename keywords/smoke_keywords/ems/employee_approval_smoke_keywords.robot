@@ -6,50 +6,52 @@ Variables    ../../../pages/ems/employee_registration_locators.py
 Variables    ../../../resources/test_data/python_data/data.py
 Resource    ../../../keywords/common/common_keywords.robot
 Resource    ../../app_navigation/app_navigation_keywords.robot
-
-
 Resource    ../../../keywords/base/base_keywords.robot
-Test Setup    Setup
-Test Teardown    Teardown
+
 
 *** Variables ***
-${full_name}=  Aaina Mallick
-${path}=  ${CURDIR}${/}..${/}..${/}..${/}results${/}smoke_testing${/}ems${/}ApprovalEMS.txt
 ${employee_name_link}=  //div//table//tbody//div//tr//span//a[contains(text(),'${full_name}')]
-${field_name}=  Search Field
-*** Test Cases ***
-Sample Test For EMS Approval
-        Testing Keywords
 
 
 *** Keywords ***
+Search By ID/Name
+    wait until element is visible  ${approval_search_field}
+    wait until element is enabled  ${approval_search_field}
+    input text  ${approval_search_field}  ${emp_id}
+    append to file  ${file_path}  Search Field: Searched employee by ID - ${emp_id}\n
 
 Click On Employee Name After Searching
-    [Arguments]   ${full_name}
     wait until element is visible  ${employee_name_link}
     click element  ${employee_name_link}
-    append to file  ${path}  ${field_name} : Clicked on - ${full_name}\n
+    append to file  ${file_path}  Clicked on - ${full_name}\n
     wait until element is visible  //h3[normalize-space()='Candidate wizard']
 
-Click On Profile Tab
-    wait until element is visible  //a[normalize-space()='Profile']
-    click element  //a[normalize-space()='Profile']
-    scroll element into view  //button[normalize-space()='Approve']
-    wait until element is enabled  //button[normalize-space()='Approve']
-    click element  //button[normalize-space()='Approve']
+Click On Profile Tab and Approve
+    [Documentation]  Click on Profile tab in EMS wizard and approve the employee
+    wait until element is visible  ${approval_profile_tab}
+    click element  ${approval_profile_tab}
+    scroll element into view  ${approve_ems_btn}
+    wait until element is enabled  ${approve_ems_btn}
+    click element  ${approve_ems_btn}
     wait until element is visible  ${employee_approval_confirmation_header}
     fill data in input field  ${remark_field}  Approved by Rahul    Remark Field
     click on element  ${send_btn}
     capture page screenshot
     verify toaster message
-    debug
 
-Testing Keywords
-    Login as an Admin
+Return Login Credential in Test Data File
+    append to file  ${file_path}  ${\n}Employee is successfully approved in the system. Please login with following credential.
+    append to file  ${file_path}  Email Id: ${official_email}
+    append to file  ${file_path}  Password: ${mobile_no}[-4:]
+
+
+Approve Employee By Admin
+    Navigate To The Home Page
     Navigate To Employee Approval Screen
-    Search By ID/Name  ${approval_search_field}  SSPL194  Search Field
-    debug
-    click on employee name after searching  ${full_name}
-    click on profile tab
+    Search By ID/Name
+    Click On Employee Name After Searching
+    Click On Profile Tab and Approve
+    Return Login Credential in Test Data File
+
 
 

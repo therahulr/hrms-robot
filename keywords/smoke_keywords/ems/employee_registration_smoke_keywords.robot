@@ -19,7 +19,7 @@ Fill Personal Information Details
     Fill Data In Input Field  ${middleNameField}  ${middle_name}  Middle Name
     Fill Data In Input Field  ${lastNameField}  ${last_name}  Last Name
     Fill Data In Input Field  ${contactNumField}  ${mobile_no}  Mobile No.
-    Fill Data In Input Field  ${emailIDField}  rahulr@techcellence.com  Email ID
+    Fill Data In Input Field  ${emailIDField}  ${temp_email}  Email ID
     Select Random Option From Dropdown  ${maritalDropdownField}  Marital Status
     Fill Data In Input Field  ${panField}  ${pan_number}  PAN No
     Fill Data In Input Field  ${aadharField}  ${aadhar_no}  Aadhar No
@@ -127,7 +127,7 @@ Fill Profile Tab
     append to file  ${file_path}  ${\n}*********************** PROFILE INFORMATION ***********************${\n}
     Click On Element  ${profileTab}
     Fill Data In Input Field  ${empIdField}  ${emp_id}  Employee ID
-    Fill Data In Input Field  ${officialEmailField}  therahul@gmail.com  Official Email
+    Fill Data In Input Field  ${officialEmailField}  ${official_email}  Official Email
     Fill Data In Input Field  ${dojField}  ${expected_date_of_joining}  Expected Date Of Joining
     Select Random Option From Dropdown  ${empTypeDropdown}  Employee Type
     Select Random Option From Dropdown  ${companyDropdown}  Company
@@ -147,8 +147,6 @@ Fill Profile Tab
     Verify Toaster Message
 
 
-Employee Approval By Admin
-    [Documentation]  Approving the last created employee
-    Go To The Home Page
-    Navigate To Employee Approval Screen
+Create an Employee in EMS
+
 

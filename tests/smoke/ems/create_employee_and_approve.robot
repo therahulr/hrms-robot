@@ -9,3 +9,27 @@ Resource    ../../../keywords/smoke_keywords/ems/employee_approval_smoke_keyword
 
 Test Setup    Setup
 Test Teardown    Teardown
+
+*** Test Cases ***
+Smoke Testing: Create an Employee and approve by admin
+    [Tags]  smoke
+    Create an employee
+    Approve Employee By Admin
+
+
+*** Keywords ***
+
+Create an employee
+    [Documentation]  Creating an employee in EMS
+    Login as an Admin
+    Navigate To Employee Registration Wizard
+    Fill Personal Information Details
+    Fill Address Details
+    Fill Experience Details
+#    Fill PF Details
+    Fill Documents Details
+    Fill Profile Tab
+
+Approve the employee by Admin
+    [Documentation]  Approve the employee by searching name
+    Approve Employee By Admin

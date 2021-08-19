@@ -110,12 +110,7 @@ Click On Element
     wait until element is enabled  ${locator}
     click element  ${locator}
 
-Search By ID/Name
-    [Arguments]   ${locator}  ${value}  ${field_name}=${locator}
-    wait until element is visible  ${locator}
-    wait until element is enabled  ${locator}
-    input text  ${locator}  ${value}
-    append to file  ${file_path}  ${field_name} : Search Employee By ID/Name - ${value}\n
+
 
 
 

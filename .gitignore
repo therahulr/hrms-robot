@@ -130,3 +130,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .pdf
+
+# Robot Framework
+log.html
+report.html
+output.xml
+

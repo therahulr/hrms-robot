@@ -131,4 +131,7 @@ employee_approval_confirmation_header = "//h5[normalize-space()='Employee Approv
 remark_field = "//textarea[@name='remark']"
 send_btn = "//button[normalize-space()='Send']"
 close_btn = "//form[@id='approvalStatusForm']//button[@type='button'][normalize-space()='Close']"
+approval_profile_tab = "//a[normalize-space()='Profile']"
+approve_ems_btn = "//button[normalize-space()='Approve']"
+
 

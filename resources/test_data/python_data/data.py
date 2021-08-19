@@ -74,8 +74,11 @@ def random_string(length):
 """Personal Data"""
 first_name = fake.first_name()
 last_name = fake.last_name()
+full_name = first_name+" "+last_name
 middle_name = first_name[:3] + last_name.lower()[:3]
 emailid = first_name.lower() + last_name[:2].lower() + "@beyondhr.cloud"
+temp_email = last_name.lower() + first_name[:2].lower() + "@gmail.com"
+official_email = first_name.lower() + last_name[:2].lower() + "@gmail.com"
 mobile_no = fake.numerify(text='98########')  # generates 10 digit mobile number (starts with 98)
 dob = fake.date_between(start_date='-60y', end_date='-20y').strftime("%d/%m/%Y")
 address = "This is a static address"  # will change to faker data when UI bug in address field will be resolved
@@ -132,8 +135,7 @@ document_selection_path = get_pdf_document()
 
 """Employee Profile"""
 
-emp_id = random.randint(1, 10)
-# emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='###') + datetime.now().strftime("%S")
+emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='###') + datetime.now().strftime("%S")
 official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
 
 """Exported text test data directory and filename"""
@@ -150,4 +152,4 @@ ems_td_file_name = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().
     "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
 """Test Programs (This section can be removed. It is only for testing some scripts"""
-print(data_folder)
+print(emp_id)
