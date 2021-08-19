@@ -8,7 +8,9 @@ Resource    ../../../keywords/common/common_keywords.robot
 Resource    ../../app_navigation/app_navigation_keywords.robot
 
 *** Variables ***
-${path}=  ${CURDIR}${/}..${/}..${/}..${/}results${/}smoke_testing${/}ems${/}${ems_creation_data_file}
+#${path}=  ${CURDIR}${/}..${/}..${/}..${/}results${/}smoke_testing${/}ems${/}${ems_creation_data_file}
+${path}=  ${ems_test_data_export_dir}/${ems_exported_data}
+
 *** Keywords ***
 Fill Personal Information Details
     [Documentation]  Filling Personal Information Details

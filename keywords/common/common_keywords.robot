@@ -1,10 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary    timeout=20s
 Library  OperatingSystem
-Variables  ../../resources/test_data/fake_data/faker_data.py
+Variables  ../../resources/test_data/python_data/data.py
 
 *** Variables ***
-${default_path}=  ${CURDIR}${/}..${/}..${/}results${/}exported_test_data${/}${defult_test_data_file}
+${default_path}=  ${default_exported_data}
 
 *** Keywords ***
 Export Test Data In Text File

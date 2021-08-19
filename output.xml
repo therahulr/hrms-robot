@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210818 09:28:55.406" rpa="false" schemaversion="2">
+<suite id="s1" name="Create Offer Test" source="E:\automation\hrms-robot\tests\smoke\offer_desk_tests\create_offer_test.robot">
+<test id="s1-t1" name="Test Case: Create Offer with fake data and using random dropdown selection">
+<kw name="SetUp" library="base_keywords" type="SETUP">
+<doc>Open url in chrome browser</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210818 09:28:56.016" level="INFO">Opening browser 'chrome' to base url 'https://test.beyondhr.cloud'.</msg>
+<status status="PASS" starttime="20210818 09:28:56.016" endtime="20210818 09:29:07.418"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210818 09:29:07.418" endtime="20210818 09:29:07.548"/>
+</kw>
+<status status="PASS" starttime="20210818 09:28:56.015" endtime="20210818 09:29:07.549"/>
+</kw>
+<kw name="Verify create a new offer letter">
+<kw name="Login as an Admin" library="base_keywords">
+<doc>Login as an Admin</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${signin_btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210818 09:29:07.552" endtime="20210818 09:29:09.557"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_field}</arg>
+<arg>${admin_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:09.558" level="INFO">Typing text 'admin@admin.com' into text field '//*[@id="m_login"]/div[2]/div/div[2]/form/div[1]/input'.</msg>
+<status status="PASS" starttime="20210818 09:29:09.557" endtime="20210818 09:29:09.756"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_field}</arg>
+<arg>${admin_pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:09.758" level="INFO">Typing text 'testadmin' into text field '//*[@id="m_login"]/div[2]/div/div[2]/form/div[2]/input'.</msg>
+<status status="PASS" starttime="20210818 09:29:09.757" endtime="20210818 09:29:09.889"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${signin_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:09.890" level="INFO">Clicking button '//*[@id="m_login_signin_submit"]'.</msg>
+<status status="PASS" starttime="20210818 09:29:09.889" endtime="20210818 09:29:09.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dashboard_logo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210818 09:29:09.992" endtime="20210818 09:29:13.529"/>
+</kw>
+<status status="PASS" starttime="20210818 09:29:07.551" endtime="20210818 09:29:13.530"/>
+</kw>
+<kw name="Navigate To Offer Letter Page" library="app_navigation_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${offerMenuBtn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210818 09:29:13.530" endtime="20210818 09:29:13.542"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${offerMenuBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:13.542" level="INFO">Clicking element '//a[@title='Onboarding Employee']'.</msg>
+<status status="PASS" starttime="20210818 09:29:13.542" endtime="20210818 09:29:13.652"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${subMenuOfferDesk}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210818 09:29:13.653" level="INFO">Simulating Mouse Over on element '//span[@class='m-menu__link-text'][normalize-space()='Offer Desk']'.</msg>
+<status status="PASS" starttime="20210818 09:29:13.652" endtime="20210818 09:29:13.967"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${subMenuCreateOffer}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:13.969" level="INFO">Clicking element '//span[contains(text(),'Create Offer')]'.</msg>
+<status status="PASS" starttime="20210818 09:29:13.968" endtime="20210818 09:29:14.208"/>
+</kw>
+<status status="PASS" starttime="20210818 09:29:13.530" endtime="20210818 09:29:14.208"/>
+</kw>
+<kw name="Go to Create Offer Form" library="create_offer_smoke_keywords">
+<doc>Clicking on create offer button</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${createOfferBtn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210818 09:29:14.210" endtime="20210818 09:29:17.213"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${createOfferBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210818 09:29:17.214" level="INFO">Clicking button '//button[normalize-space()='Create Offer']'.</msg>
+<status status="PASS" starttime="20210818 09:29:17.213" endtime="20210818 09:29:17.483"/>
+</kw>
+<status status="PASS" starttime="20210818 09:29:14.209" endtime="20210818 09:29:17.484"/>
+</kw>
+<kw name="Fill Data In Create Offer Form" library="create_offer_smoke_keywords">
+<doc>Clicking on create offer button</doc>
+<kw name="Export Test Data In Text File" library="common_keywords">
+<arg>${path}</arg>
+<kw name="Create File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>***TEST DATA***${\n}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20210818 09:29:17.492" level="FAIL">AttributeError: 'str' object has no attribute '_accessor'</msg>
+<status status="FAIL" starttime="20210818 09:29:17.485" endtime="20210818 09:29:17.492"/>
+</kw>
+<kw name="File Should Exist" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.493" endtime="20210818 09:29:17.493"/>
+</kw>
+<status status="FAIL" starttime="20210818 09:29:17.485" endtime="20210818 09:29:17.495"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>${path}</arg>
+<arg>*********************** Create Offer Form ***********************${\n}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.496" endtime="20210818 09:29:17.496"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${firstnamefield}</arg>
+<arg>${first_name}</arg>
+<arg>First Name</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.510" endtime="20210818 09:29:17.511"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${middleNameField}</arg>
+<arg>${middle_name}</arg>
+<arg>Middle Name</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.526" endtime="20210818 09:29:17.527"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${lastnamefield}</arg>
+<arg>${last_name}</arg>
+<arg>Last Name</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.543" endtime="20210818 09:29:17.543"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${emailidfield}</arg>
+<arg>${emailid}</arg>
+<arg>Email ID</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.561" endtime="20210818 09:29:17.561"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${mobileNumberField}</arg>
+<arg>${mobile_no}</arg>
+<arg>Mobile Number</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.577" endtime="20210818 09:29:17.577"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${dateofbirthfield}</arg>
+<arg>${dob}</arg>
+<arg>Date of birth</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.596" endtime="20210818 09:29:17.596"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${categoryDropdownField}</arg>
+<arg>Category</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.597" endtime="20210818 09:29:17.597"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${genderDropdownField}</arg>
+<arg>Gender</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.597" endtime="20210818 09:29:17.598"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${addressField}</arg>
+<arg>${address}</arg>
+<arg>Address</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.615" endtime="20210818 09:29:17.615"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${countryDropdownField}</arg>
+<arg>Country</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.615" endtime="20210818 09:29:17.615"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${stateDropdownField}</arg>
+<arg>State</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.616" endtime="20210818 09:29:17.616"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${cityDropdownField}</arg>
+<arg>City</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.616" endtime="20210818 09:29:17.616"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${postalField}</arg>
+<arg>${postal_code}</arg>
+<arg>Postal Code</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.630" endtime="20210818 09:29:17.630"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${panField}</arg>
+<arg>${pan_number}</arg>
+<arg>PAN No</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.642" endtime="20210818 09:29:17.642"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${expectedDojField}</arg>
+<arg>${expected_date_of_joining}</arg>
+<arg>Expected Date Of Joining</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.655" endtime="20210818 09:29:17.655"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${designationDropdownField}</arg>
+<arg>Designation</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.656" endtime="20210818 09:29:17.656"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${deptDropdownField}</arg>
+<arg>Department</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.656" endtime="20210818 09:29:17.656"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${empTypeDropdownField}</arg>
+<arg>Employee Type</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.656" endtime="20210818 09:29:17.656"/>
+</kw>
+<kw name="Select A Value From Dropdown" library="common_keywords">
+<arg>${locationDropdownField}</arg>
+<arg>Gurugram</arg>
+<arg>Location</arg>
+<doc>Selecting a specific option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.657" endtime="20210818 09:29:17.657"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${gradeDropdownField}</arg>
+<arg>Grade</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.657" endtime="20210818 09:29:17.657"/>
+</kw>
+<kw name="Select Random Option From Dropdown" library="common_keywords">
+<arg>${skillDropdownField}</arg>
+<arg>Skill</arg>
+<doc>Selecting a random option from the dropdown</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.657" endtime="20210818 09:29:17.657"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${expYearField}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.657" endtime="20210818 09:29:17.657"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${expYearField}</arg>
+<arg>${work_exp_year}</arg>
+<arg>Experience(In Year)</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.665" endtime="20210818 09:29:17.665"/>
+</kw>
+<kw name="Fill Data In Input Field" library="common_keywords">
+<arg>${expMonthField}</arg>
+<arg>${work_exp_month}</arg>
+<arg>Experience(In Month)</arg>
+<doc>Fill Data In Input Field "${locator}" with value = ${value}</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.684" endtime="20210818 09:29:17.684"/>
+</kw>
+<status status="FAIL" starttime="20210818 09:29:17.484" endtime="20210818 09:29:17.687"/>
+</kw>
+<kw name="Go to Salary Structure Form" library="create_offer_smoke_keywords">
+<status status="NOT RUN" starttime="20210818 09:29:17.688" endtime="20210818 09:29:17.688"/>
+</kw>
+<kw name="Fill Data In Offer Letter Salary Form" library="create_offer_smoke_keywords">
+<doc>Selecting random option from the dynamic dropdown -- evaluated some python scripts here</doc>
+<status status="NOT RUN" starttime="20210818 09:29:17.689" endtime="20210818 09:29:17.689"/>
+</kw>
+<kw name="Save Offer Letter" library="create_offer_smoke_keywords">
+<status status="NOT RUN" starttime="20210818 09:29:17.689" endtime="20210818 09:29:17.690"/>
+</kw>
+<status status="FAIL" starttime="20210818 09:29:07.550" endtime="20210818 09:29:17.691"/>
+</kw>
+<kw name="TearDown" library="base_keywords" type="TEARDOWN">
+<doc>Quitting browser</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210818 09:29:17.693" endtime="20210818 09:29:20.589"/>
+</kw>
+<status status="PASS" starttime="20210818 09:29:17.692" endtime="20210818 09:29:20.589"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" starttime="20210818 09:28:56.014" endtime="20210818 09:29:20.590">AttributeError: 'str' object has no attribute '_accessor'</status>
+</test>
+<status status="FAIL" starttime="20210818 09:28:55.408" endtime="20210818 09:29:20.597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Create Offer Test">Create Offer Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

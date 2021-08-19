@@ -136,16 +136,18 @@ emp_id = random.randint(1, 10)
 # emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='###') + datetime.now().strftime("%S")
 official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
 
-"""Exported test data filename"""
-offer_desk_exported_data_dir = Path("../../../results/exported_test_data/offer_desk")
-create_offer_data_file = "Create_Offer_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+"""Exported text test data directory and filename"""
+offer_desk_test_data_export_dir = Path("../../../results/exported_test_data/offer_desk")
+create_offer_exported_data = "Create_Offer_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
     "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
-ems_creation_data_file = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
-    "%d_%b_%y__%I_%M_%S_%p") + ".txt"
+ems_test_data_export_dir = Path("../../../results/exported_test_data/ems")
+ems_exported_data = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+                "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
-defult_test_data_file = first_name + "_" + last_name + "_" + datetime.now().strftime(
-    "%d_%b_%y__%I_%M_%S_%p") + ".txt"
+default_exported_data = Path("../../../results/exported_test_data") / (
+            first_name + "_" + last_name + "_" + datetime.now().strftime(
+                "%d_%b_%y__%I_%M_%S_%p") + ".txt")
 
 """Test Programs (This section can be removed. It is only for testing some scripts"""
-print(offer_desk_exported_data_dir / create_offer_data_file)
+print(ems_test_data_export_dir/ems_exported_data)

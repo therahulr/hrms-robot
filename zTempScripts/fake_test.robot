@@ -13,11 +13,11 @@ Resource    ../keywords/common/common_keywords.robot
 #Test Teardown    Teardown
 
 *** Variables ***
-${path}=  ${CURDIR}/${defult_test_data_file}
-${pathx}=  ${CURDIR}/${defult_test_data_file}
-${pathss}=  ${CURDIR}/${ems_creation_data_file}
-${f}=  ${{random.randint(0, 100)}}
-${loc}=  FirstLoc
+#${path}=  ${CURDIR}/${defult_test_data_file}
+#${pathx}=  ${CURDIR}/${defult_test_data_file}
+#${pathss}=  ${CURDIR}/${ems_creation_data_file}
+#${f}=  ${{random.randint(0, 100)}}
+#${loc}=  FirstLoc
 
 
 
@@ -47,7 +47,7 @@ Mark Attendance As Candidate
 
 
 Print Path Variables
-    log  ${result}
+    log  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
 #    create file  ${result}/${ems_creation_data_file}
 #    append to file  ${result}  This is Rahul Raj
 

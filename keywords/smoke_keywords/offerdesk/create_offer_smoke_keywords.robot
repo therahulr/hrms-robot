@@ -7,7 +7,7 @@ Variables    ../../../resources/test_data/python_data/data.py
 Resource    ../../../keywords/common/common_keywords.robot
 
 *** Variables ***
-${path}=  ${CURDIR}${/}..${/}..${/}..${/}results${/}smoke_testing${/}offer_desk${/}${create_offer_data_file}
+${path}=  ${offer_desk_test_data_export_dir}${/}${create_offer_exported_data}
 
 *** Keywords ***
 
