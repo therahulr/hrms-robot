@@ -42,3 +42,11 @@ Navigate To Employee Approval Screen
     click element  ${employee_approval_option}
     wait until element is visible  ${employee_approval_screen_header}
 
+Navigate To Mark Attendance Page
+    wait until element is visible  ${markAttMenuLink}
+    click element  ${markAttMenuLink}
+    wait until element is visible  ${markAttSubMenu}
+    click element  ${markAttSubMenu}
+    wait until element is visible  ${markAttScreenHeader}
+
+

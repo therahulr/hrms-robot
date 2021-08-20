@@ -41,8 +41,8 @@ Click On Profile Tab and Approve
 
 Return Login Credential in Test Data File
     append to file  ${file_path}  ${\n}Employee is successfully approved in the system. Please login with following credential.
-    append to file  ${file_path}  Email Id: ${official_email}
-    append to file  ${file_path}  Password: ${mobile_no}[-4:]
+    append to file  ${file_path}  \nEmail Id: ${official_email}
+    append to file  ${file_path}  \nPassword: ${mobile_no}[-4:]
 
 
 Approve Employee By Admin

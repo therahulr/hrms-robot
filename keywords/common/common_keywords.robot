@@ -110,7 +110,10 @@ Click On Element
     wait until element is enabled  ${locator}
     click element  ${locator}
 
-
+Try Reload If Element Is Not Visible
+    [Arguments]  ${locator}
+    ${get_element_count}=  get element count  ${locator}
+    run keyword if  ${get_element_count} < 0  reload page
 
 
 

@@ -25,3 +25,10 @@ wizard_header = "//h3[normalize-space()='Candidate wizard']"
 # EMS Approval
 employee_approval_option = "//span[normalize-space()='Employee Approval']"
 employee_approval_screen_header = "//h3[normalize-space()='Employee Approval List']"
+
+# NAVIGATE TO MARK ATTENDANCE PAGE
+markAttMenuLink = "//a[contains(@title,'Mark Attendance')]"
+markAttSubMenu = "//span[normalize-space()='Mark Attendance']"
+markAttScreenHeader = "//h3[normalize-space()='Mark Your Attendance']"
+
+
