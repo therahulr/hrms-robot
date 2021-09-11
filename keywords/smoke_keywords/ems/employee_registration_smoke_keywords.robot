@@ -19,7 +19,7 @@ Fill Personal Information Details
     Fill Data In Input Field  ${middleNameField}  ${middle_name}  Middle Name
     Fill Data In Input Field  ${lastNameField}  ${last_name}  Last Name
     Fill Data In Input Field  ${contactNumField}  ${mobile_no}  Mobile No.
-    Fill Data In Input Field  ${emailIDField}  ${temp_email}  Email ID
+    Fill Data In Input Field  ${emailIDField}  ${emailid}  Email ID
     Select Random Option From Dropdown  ${maritalDropdownField}  Marital Status
     Fill Data In Input Field  ${panField}  ${pan_number}  PAN No
     Fill Data In Input Field  ${aadharField}  ${aadhar_no}  Aadhar No
@@ -37,6 +37,7 @@ Fill Address Details
     Fill Data In Input Field  ${address1field}  ${address_one}  Address Line 1
     Fill Data In Input Field  ${address2field}  ${address_two}  Address Line 2
     Select Random Option From Dropdown  ${countryDropdownField}  Country
+    sleep  3s
     Select Random Option From Dropdown  ${stateDropdownField}  State
     Select Random Option From Dropdown  ${cityDropdownField}  City
     Fill Data In Input Field  ${postalCodeField}  ${postal_code}  Postal Code
@@ -94,8 +95,8 @@ Fill PF Details
     Fill Data In Input Field  ${bankNameField}  ${bank_name}  Bank Name
     Fill Data In Input Field  ${branchNameField}  ${branch_name}  Branch Name
     Fill Data In Input Field  ${micrNumField}  ${micr_no}  MICR No
-    Fill Data In Input Field  ${ifscCodeField}  ${ifsc_code}  IFSC Code
-    Fill Nominee Details
+    Fill Data In Input Field  ${ifscCodeField}  SBIN0010773  IFSC Code
+#    Fill Nominee Details
     Click Action Button  ${pfSaveBtn}
     Verify Toaster Message
 
@@ -103,7 +104,7 @@ Select Reporting Manager
     [Documentation]  Selecting Reporting Manager
     Click On Element  ${reporting_manager_search_icon}
     Click On Element  ${reporting_search_dropdown}
-    Fill Data In Input Field  ${reporting_search_dropdown}  Admin  Reporting Manager
+    Fill Data In Input Field  ${reporting_search_dropdown}  ${rep_man}  Reporting Manager
     sleep  2s
     Press Keys    ${reporting_search_dropdown}    ENTER
     sleep  2s

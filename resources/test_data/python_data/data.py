@@ -78,7 +78,7 @@ full_name = first_name+" "+last_name
 middle_name = first_name[:3] + last_name.lower()[:3]
 emailid = first_name.lower() + last_name[:2].lower() + "@beyondhr.cloud"
 temp_email = last_name.lower() + first_name[:2].lower() + "@gmail.com"
-official_email = first_name.lower() + last_name[:2].lower() + "@gmail.com"
+official_email = first_name.lower() + last_name[:2].lower() + "@beyondhr.cloud"
 mobile_no = fake.numerify(text='98########')  # generates 10 digit mobile number (starts with 98)
 dob = fake.date_between(start_date='-60y', end_date='-20y').strftime("%d/%m/%Y")
 address = "This is a static address"  # will change to faker data when UI bug in address field will be resolved
@@ -103,7 +103,7 @@ achievements = fake.sentence(nb_words=20)
 promotion = fake.sentence(nb_words=5)
 reason_of_leaving = fake.sentence(nb_words=30)
 organization = "Organization One"
-
+rep_man = "Seher"
 """Salary and Bank Data"""
 
 salary_ctc = random.randint(300000, 1000000)
@@ -135,7 +135,7 @@ document_selection_path = get_pdf_document()
 
 """Employee Profile"""
 
-emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='###') + datetime.now().strftime("%S")
+emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='##') + datetime.now().strftime("%S")
 official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
 
 """Exported text test data directory and filename"""

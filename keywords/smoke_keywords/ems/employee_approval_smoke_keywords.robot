@@ -38,6 +38,7 @@ Click On Profile Tab and Approve
     click on element  ${send_btn}
     capture page screenshot
     verify toaster message
+    reload page
 
 Return Login Credential in Test Data File
     append to file  ${file_path}  ${\n}Employee is successfully approved in the system. Please login with following credential.

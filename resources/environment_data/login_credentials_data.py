@@ -1,5 +1,6 @@
 admin_username = "admin@admin.com"
-admin_pass = "testadmin"
+# admin_pass = "testadmin"
+admin_pass = "adminadmin"
 
 manager_username = ""
 manager_pass = ""

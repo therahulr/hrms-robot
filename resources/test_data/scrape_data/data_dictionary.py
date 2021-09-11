@@ -1,0 +1,36 @@
+month_dict = {"1": "January",
+              "2": "Febraury",
+              "3": "March",
+              "4": "Apr",
+              "5": "May",
+              "6": "June",
+              "7": "July",
+              "8": "August",
+              "9": "September",
+              "10": "October",
+              "11": "November",
+              "12": "December",
+              }
+
+days = {
+    1: "monthday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+    7: "Sunday",
+}
+
+holiday_list = {1: [1, 26],
+                2: [10],
+                3: [11, 29],
+                4: [],
+                5: [14],
+                6: [],
+                7: [],
+                8: [30],
+                9: [],
+                10: [2, 15],
+                11: [4, 5],
+                12: [25], }

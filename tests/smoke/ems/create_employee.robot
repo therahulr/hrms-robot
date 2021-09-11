@@ -22,9 +22,10 @@ New Employee Registration
     Login as an Admin
     Navigate To Employee Registration Wizard
     Fill Personal Information Details
-#    Fill Address Details
-#    Fill Experience Details
-#    Fill PF Details
+    Fill Address Details
+    Fill Experience Details
+    Fill PF Details
     Fill Documents Details
+    Fill Profile Tab
     debug
-#    Fill Profile Tab
+
