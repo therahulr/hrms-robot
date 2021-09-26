@@ -64,6 +64,16 @@ Select A Value From Dropdown
     select from list by label  ${locator}  ${label}
     append to file  ${file_path}  ${field_name}: Selected option - ${label}\n
 
+Select an option by label
+    [Arguments]   ${locator}  ${field_name}=${locator}  ${label_val}=User
+    [Documentation]  Selecting an option by label
+    Scroll If Elemenet Is Not Visible  ${locator}
+    wait until element is enabled  ${locator}
+    click element  ${locator}
+    wait until element is visible  ${locator}//option[2]
+    select from list by label  ${locator}  ${label_val}
+    append to file  ${file_path}  ${field_name} : Selected an option - ${label_val}\n
+
 Select Random Option From Dropdown
     [Arguments]   ${locator}  ${field_name}=${locator}
     [Documentation]  Selecting a random option from the dropdown

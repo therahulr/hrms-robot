@@ -8,7 +8,7 @@ Resource    ../../../keywords/common/common_keywords.robot
 Resource    ../../app_navigation/app_navigation_keywords.robot
 
 *** Variables ***
-${file_path}=  ${ems_td_data_path}${/}${ems_td_file_name}
+${file_path}=  ${candidate_onboarding_td_data_path}${/}${candidate_onboarding_td_file_name}
 
 *** Keywords ***
 Fill Personal Information Details

@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-from test_data.scrape_data.locators import *
-from test_data.scrape_data.selenium_work import SeleniumDriver
+from resources.test_data.scrape_data.locators import *
+from resources.test_data.scrape_data.selenium_work import SeleniumDriver
 
 
 class EmployeeData(SeleniumDriver):
@@ -88,7 +88,8 @@ class EmployeeData(SeleniumDriver):
         print("Fetching all active employees...")
         total_page = int(self.get_total_page())
         print("Getting data from page 1")
-        my_data.append(self.get_employee_data())  # This will get and append data available on the first page (default page)
+        my_data.append(
+            self.get_employee_data())  # This will get and append data available on the first page (default page)
         # Loop will start from second page
         for page in range(0, total_page):
             self.wait.until(EC.presence_of_element_located((By.XPATH, next_page))).click()

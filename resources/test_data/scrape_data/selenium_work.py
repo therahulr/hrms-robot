@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from test_data.scrape_data.locators import *
-from test_data.scrape_data.read_config import EnvData
+from resources.test_data.scrape_data.locators import *
+from resources.test_data.scrape_data.read_config import EnvData
 
 
 class SeleniumDriver(EnvData):

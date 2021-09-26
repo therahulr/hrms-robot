@@ -103,7 +103,7 @@ achievements = fake.sentence(nb_words=20)
 promotion = fake.sentence(nb_words=5)
 reason_of_leaving = fake.sentence(nb_words=30)
 organization = "Organization One"
-rep_man = "Seher"
+rep_man = "Yuvaan"
 """Salary and Bank Data"""
 
 salary_ctc = random.randint(300000, 1000000)
@@ -136,7 +136,7 @@ document_selection_path = get_pdf_document()
 """Employee Profile"""
 
 emp_id = "SSPL" + str(random.randint(1, 9)) + fake.numerify(text='##') + datetime.now().strftime("%S")
-official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
+# official_email = first_name.lower() + last_name[:2].lower() + "@beyond.com"
 
 """Exported text test data directory and filename"""
 default_td_data_path = Path("results/exported_test_data")
@@ -149,6 +149,10 @@ od_td_file_name = "Create_Offer_" + first_name + "_" + last_name + "_" + datetim
 
 ems_td_data_path = Path("results/exported_test_data/ems/")
 ems_td_file_name = "EMS_" + first_name + "_" + last_name + "_" + datetime.now().strftime(
+    "%d_%b_%y__%I_%M_%S_%p") + ".txt"
+
+candidate_onboarding_td_data_path = Path("results/exported_test_data/onboarding/candidate_onboarding_form/")
+candidate_onboarding_td_file_name = first_name + "_" + last_name + "_" + datetime.now().strftime(
     "%d_%b_%y__%I_%M_%S_%p") + ".txt"
 
 """Test Programs (This section can be removed. It is only for testing some scripts"""

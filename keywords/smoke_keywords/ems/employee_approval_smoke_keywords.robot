@@ -34,7 +34,7 @@ Click On Profile Tab and Approve
     wait until element is enabled  ${approve_ems_btn}
     click element  ${approve_ems_btn}
     wait until element is visible  ${employee_approval_confirmation_header}
-    fill data in input field  ${remark_field}  Approved by Rahul    Remark Field
+    fill data in input field  ${remark_field}  Approved by Admin    Remark Field
     click on element  ${send_btn}
     capture page screenshot
     verify toaster message
@@ -50,6 +50,7 @@ Approve Employee By Admin
     Navigate To The Home Page
     Navigate To Employee Approval Screen
     Search By ID/Name
+    sleep  2s
     Click On Employee Name After Searching
     Click On Profile Tab and Approve
     Return Login Credential in Test Data File

@@ -17,8 +17,6 @@ Smoke Testing: Create an Employee and approve by admin
     [Tags]  smoke
     Create an employee
     Approve Employee By Admin
-    Mark In Time By Created Employee
-
 
 *** Keywords ***
 
@@ -29,7 +27,7 @@ Create an employee
     Fill Personal Information Details
     Fill Address Details
     Fill Experience Details
-#    Fill PF Details
+    Fill PF Details
     Fill Documents Details
     Fill Profile Tab
 

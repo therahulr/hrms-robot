@@ -3,22 +3,50 @@ import datetime
 from calendar import monthrange
 from datetime import date
 
-from resources.test_data.scrape_data.data_dictionary import *
-
 
 class Attendance:
+
     def __init__(self):
-        self.days = days
-        self.month_dict = month_dict
-        self.holiday_list = holiday_list
+        self.days = {
+            1: "monthday",
+            2: "Tuesday",
+            3: "Wednesday",
+            4: "Thursday",
+            5: "Friday",
+            6: "Saturday",
+            7: "Sunday",
+        }
+        self.month_dict = {"1": "January",
+                           "2": "Febraury",
+                           "3": "March",
+                           "4": "Apr",
+                           "5": "May",
+                           "6": "June",
+                           "7": "July",
+                           "8": "August",
+                           "9": "September",
+                           "10": "October",
+                           "11": "November",
+                           "12": "December",
+                           }
 
     month = int(input("Enter month number : "))
     print("Enter one or more weekend day's number separated by comma (For default press 0 or press ENTER)")
     user_input = [x for x in input().split(',')]
-    current_year = date.today().year
 
     def get_holidays(self):
-        holiday_list = self.holiday_list
+        holiday_list = {1: [1, 26],
+                        2: [10],
+                        3: [11, 29],
+                        4: [],
+                        5: [14],
+                        6: [],
+                        7: [],
+                        8: [30],
+                        9: [],
+                        10: [2, 15],
+                        11: [4, 5],
+                        12: [25], }
         if holiday_list[self.month]:
             holiday_date = [i for i in holiday_list[self.month]]
             return holiday_date
@@ -28,27 +56,39 @@ class Attendance:
             return holiday_date
 
     def get_no_of_weekends(self):
+
         weekends = []
+
         if len(self.user_input) == 1:
             for num in self.user_input:
                 if num == str(0):
+
                     weekends = [7]
                 elif num == "":
+
                     weekends = [7]
+
                 elif str(1) <= num <= str(7):
+
                     weekends = self.user_input
                 else:
-                    print("Wrong input")
+                    print("Wrong data entered")
+
         elif 1 < len(self.user_input) <= 7:  # [3,5] If a user selects more than one weekend
             if any(str(1) > val > str(7) for val in self.user_input):
-                print("You cannot enter a day no greater than 7")
+                print("You cannot enter a day number greater than 7")
             else:
                 weekends = self.user_input
+
         else:
             print("Wrong data entered. Please try again")
+
         return weekends
 
+    current_year = date.today().year
+
     def get_no_of_days_in_month(self):
+
         return monthrange(self.current_year, self.month)[1]
 
     def total_weekends_days(self):

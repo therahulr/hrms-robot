@@ -7,8 +7,8 @@ from openpyxl import Workbook
 from openpyxl.styles import *
 from openpyxl.worksheet.dimensions import ColumnDimension
 
-from scrapedata.datetime_util import Attendance
-from test_data.scrape_data.data_dictionary import *
+from resources.test_data.scrape_data.datetime_util import Attendance
+from resources.test_data.scrape_data.data_dictionary import *
 
 
 class GenerateAttendance(Attendance):
@@ -18,7 +18,7 @@ class GenerateAttendance(Attendance):
         self.days = days
         self.month_dict = month_dict
         self.holiday_list = holiday_list
-        self.sheet_directory = "daywise_attendance_sheet/"
+        self.sheet_directory = "attendance_daywise/"
         self.wb = Workbook()
         self.ws = self.wb.create_sheet("Attendance Sheet", 0)
         self.ws.column_dimensions['A'].width = 20

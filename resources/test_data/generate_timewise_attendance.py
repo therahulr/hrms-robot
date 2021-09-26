@@ -8,10 +8,9 @@ from datetime import timedelta
 
 import numpy as np
 from openpyxl import Workbook
-from openpyxl.worksheet.dimensions import ColumnDimension
 from openpyxl.styles import *
 
-from test_data.scrape_data.data_dictionary import *
+from resources.test_data.scrape_data.data_dictionary import *
 
 
 class TimeWiseAttendance:
@@ -25,7 +24,7 @@ class TimeWiseAttendance:
         self.start_date = self.today.replace(day=1, month=self.month)
         self.last_day = calendar.monthrange(self.current_year, self.month)[1]
         self.last_date = self.today.replace(day=self.last_day, month=self.month)
-        self.date_list = [d.strftime("%Y-%m-%d") for d in
+        self.date_list = [d.strftime("%d-%m-%Y") for d in
                           (self.start_date + timedelta(days=x) for x in
                            range((self.last_date - self.start_date).days + 1))]
 
@@ -133,14 +132,14 @@ class TimeWiseAttendance:
         emp = self.read_db()
         total_work_days = self.get_total_work_days()
         # Excel File
-        sheet_directory = "timewise_attendance_sheet/"
+        sheet_directory = "attendance_timewise/"
         wb = Workbook()
         ws = wb.create_sheet("data", 0)
-        ws.column_dimensions['A'].width = 20
-        ws.column_dimensions['B'].width = 20
-        ws.column_dimensions['C'].width = 20
-        ws.column_dimensions['D'].width = 20
-        ws.column_dimensions['E'].width = 20
+        ws.column_dimensions['A'].width = 17
+        ws.column_dimensions['B'].width = 23
+        ws.column_dimensions['C'].width = 17
+        ws.column_dimensions['D'].width = 17
+        ws.column_dimensions['E'].width = 23
         start_row = 1
         start_col = 1
         filename = sheet_directory + month_dict[str(self.month)] + "_" + str(self.current_year) + ".xlsx"
@@ -199,7 +198,7 @@ class TimeWiseAttendance:
                                                                                                self.intime_end).strftime(
                     self.frmt)
                 ws.cell(row=s_row + emp_id, column=start_col + 3).value = self.out_time_with_half_day()[0]
-                ws.cell(row=s_row + emp_id, column=start_col + 4).value = 101
+                ws.cell(row=s_row + emp_id, column=start_col + 4).value = "SSPL35119"
 
             s_row = s_row + len(emp)
 
